@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Contact Us</h1>
+    <div class="col-sm-6 col-12">
+    <form  method="post">{% csrf_token %}
+      {{ form }}
+     <button type="submit" name="send-button" autofocus="True">Send</button>
+    </form>
+    </div>
+  </body>
+</html>
