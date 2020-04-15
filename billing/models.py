@@ -6,6 +6,10 @@ from django.db import models
 from django.db.models.signals import post_save
 from accounts.models import GuestEmail
 
+#import stripe
+#stripe_api_key="sk_test_cullQmcg10LffhLvYrSCp5XE"
+
+
 User = settings.AUTH_USER_MODEL
 
 
@@ -32,7 +36,7 @@ class BillingProfile(models.Model):
     timestamp  = models.DateTimeField(auto_now_add=True)
 
 
-    objects = BillingProfileManager()   
+    objects = BillingProfileManager()
 
     def __str__(self):
         return self.email

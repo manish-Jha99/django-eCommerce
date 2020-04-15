@@ -1,14 +1,59 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    </head>
+    {% include 'base/css.html' %}
+  </head>
   <body>
     {% include 'base/navbar.html' %}
-  {% block content %}{% endblock %}
 
-  {% include 'base/js.html' %}
+    {% block content %}{% endblock %}
+
+
+
+    {% include 'base/js.html' %}
+
+
+    <script>
+    $(document).ready(function(){
+      var productForm = $(".form-product-ajax")
+      productForm.submit(function(event){
+        event.preventDefault();
+        console.log("form is not");
+
+        var thisForm=$(this)
+        var actionEndpoint=thisForm.attr("action");
+        var httpMethod=thisForm.attr("method");
+        var formData=this.serialize();
+
+        $.ajax({
+          url:actionEndpoint,
+          method:httpMethod,
+          data:formData,
+          success:function(data){
+            var submitSpan=thisForm.find(".submit-span")
+            if (data.added){
+              submitSpan.html("In cart <button type='submit' class='btn btn-link'> Remove </button>")
+            }else{
+              submitSpan.html("<button type='submit' class='btn btn-success'> Add to cart</button>")
+            }
+            var navbarCount = $(".navbar-cart-count");
+            navbarCount.text(data.cartItemCount)
+          },
+          error:function(errorData){
+            console.log("Error");
+            console.log(errorData);
+          }
+
+        })
+
+      })
+
+    })
+
+    </script>
   </body>
 </html>

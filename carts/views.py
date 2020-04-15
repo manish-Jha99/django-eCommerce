@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
-
+from django.http import JsonResponse
 from accounts.forms import LoginForm, GuestForm
 from accounts.models import GuestEmail
 from addresses.forms import AddressForm
@@ -31,9 +31,18 @@ def cart_update(request):
             return redirect("cart:home")
         if product_obj in cart_obj.products.all():
             cart_obj.products.remove(product_obj)
+            added =False
         else:
             cart_obj.products.add(product_obj)
+            added =True
         request.session['cart_item'] = cart_obj.products.count()
+        if request.is_ajax():
+            jsonData={
+            "added":added,
+            "removed":not added,
+            "cartItemCount":cart_obj.products.count()
+            }
+            return JsonResponse(jsonData)
     return redirect("cart:home")
 
 
