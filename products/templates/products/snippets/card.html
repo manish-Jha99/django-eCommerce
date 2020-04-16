@@ -1,4 +1,5 @@
-<div class="card" style = "width: 20rem;">
+<div class="container">
+  <div class="card" style = "width: 20rem;">
   {% if instance.image %}
   <a href="{{ instance.get_absolute_urls }}"><img class="card-img-top" src="{{ instance.image.urls }}" alt="{{ instance.title}} logo"></a>
   {% endif %}
@@ -8,5 +9,6 @@
     {% include 'products/snippets/update-cart.html' with product=instance cart=cart %}
 
     <!--<a href="{% url 'products:detail' slug=instance.slug%}">Url shortcuts</a>-->
+  </div>
   </div>
 </div>

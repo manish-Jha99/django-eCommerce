@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{% extends 'base.html' %}
+
+{% block content%}
+ <div class="text-center">
     <h1>Contact Us</h1>
-    <div class="col-sm-6 col-12">
-    <form  method="post">{% csrf_token %}
-      {{ form }}
-     <button type="submit" name="send-button" autofocus="True">Send</button>
-    </form>
-    </div>
-  </body>
-</html>
+  </div>
+     <div class="container">
+       <div class="row">
+          <div class="col">
+              <div class="col-sm-6 col-12">
+                <form  method="post">{% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" name="send-button" class="btn btn-default" autofocus="True">Send</button>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>
+{% endblock %}

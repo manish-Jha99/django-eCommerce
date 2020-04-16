@@ -5,19 +5,52 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"> -->
     {% include 'base/css.html' %}
-  </head>
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .carousel {
+      height: 60vh;
+    }
+
+    @media (max-width: 740px) {
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 100vh;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 100vh;
+      }
+    }
+
+  </style>
+</head>
+
   <body>
-    {% include 'base/navbar.html' %}
+      {% include 'base/navbar.html' %}
+        {% block content %}{% endblock %}
+        {% include 'base/js.html' %}
 
-    {% block content %}{% endblock %}
+  </body>
+</html>
 
 
 
-    {% include 'base/js.html' %}
 
-
-    <script>
+  <!--  <script>
     $(document).ready(function(){
       var productForm = $(".form-product-ajax")
       productForm.submit(function(event){
@@ -54,6 +87,4 @@
 
     })
 
-    </script>
-  </body>
-</html>
+  </script> -->
