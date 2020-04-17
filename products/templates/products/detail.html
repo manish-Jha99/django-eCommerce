@@ -2,21 +2,25 @@
 
 {% block content %}
 <div class="container">
-
+<div class="card" style = "width:40rem;">
 <div class='row'>
   <div class='col-12 col-md-6'>
-      {{ object.title }}<br/>
-      {{ object.description }}<br/>
-      {{ object.timestamp  | timesince}} ago <br/>
-      {{ object.price }}<br/>
+    <div class="card-body">
+      <h4 class="card-title ">{{ object.title }}</h4><hr>
+      <h5 > {{ object.description }} </h5>
+      <h5>{{ object.timestamp  | timesince}} ago</h5>
+      <h5>{{ object.price }}</h5>
       {% if object.image %}
         <img src="{{ object.image.url }}" class="img-fluid" />
       {% endif %}
      </div>
-     <div class='col-12 col-md-6'>
-       {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
-     </div>
-</div>
-</div>
+   </div>
+    </div>
+    <div class='col-12 col-md-6'>
+      {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+    </div>
+  </div>
+ </div>
+
 
 {% endblock %}
