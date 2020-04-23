@@ -47,7 +47,7 @@ def login_page(request):
             if is_safe_url(redirect_path, request.get_host()):
                 return redirect(redirect_path)
             else:
-                return redirect("/")
+                return redirect("/products")
         else:
             print("error")
     return render(request, "accounts/login.html", context)
@@ -60,10 +60,12 @@ def register_page(request):
          "form" : form
         }
     if form.is_valid():
-        print(form.cleaned_data)
+        # print(form.cleaned_data)
+
         username = form.cleaned_data.get("username")
         email    = form.cleaned_data.get("email")
         password = form.cleaned_data.get("password")
         new_user = User.objects.create_user(username,email,password)
-        print(new_user)
+
+        # print(new_user)
     return render(request, "accounts/register.html",context)

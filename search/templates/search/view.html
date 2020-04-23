@@ -2,14 +2,11 @@
 {% block content %}
 <div class="container">
   <div class="row">
- {% if request.GET.q%}
+ {% if request.GET.q %}
  <div class="col-12 mb-3">
-   Results for <b>{{ request.GET.q }}</b>
+   <h1 style="color:green;">Results for <b>{{ request.GET.q }}</b></h1>
  </div>
  {% endif %}
-
-
-
 
 
     {% for obj in object_list %}

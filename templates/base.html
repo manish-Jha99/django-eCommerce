@@ -47,11 +47,10 @@
 </head>
 
   <body >
-
     {% include 'base/navbar.html' %}
     {% block content %}{% endblock %}
+    {% include 'base/footer.html' %}
     {% include 'base/js.html' %}
-
   <script>
     $(document).ready(function(){
       // Contact form handler
@@ -173,19 +172,34 @@
       function refreshCart(){
         var cartTable = $('.cart-table')
         var cartBody  =  cartTable.find('.cart-body')
-        cartBody.html("<h1>Changed</h1>")
+        var productRows=cartBody.find(".cart-products")
+        var currentUrl=window.location.href
 
         var refreshCartUrl = '/api/cart/';
         var refreshCartMethod = "GET";
         var data = {};
 
-        $ajax({
+        $.ajax({
             url : refreshCartUrl,
             mathod: refreshCartMethod,
             data: data,
             success:function(data){
-              console.log('success');
-              console.log(data);
+              var hiddenCartItemRemoveForm=$(".cart-item-remove-form")
+              if(data.products.length > 0){
+                productRows.html("")
+                i=data.products.length
+                $.each(data.products, function(index,value){
+                  var newCartItemRemove = hiddenCartItemRemoveForm.clone()
+                  newCartItemRemove.css("display","block")
+                  newCartItemRemove.find(".cart-item-product-id").val(value.id)
+                  cartBody.prepend("<tr><th scope=\"row\">" + i + "</th><td><a href='" + value.url + "'>" + value.title + "</a>"+ newCartItemRemove.html() +"</td><td>" + value.price +"</td></tr>")
+                  i--
+                })
+                cartBody.find(".cart-subtotal").text(data.subtotal)
+                cartBody.find(".cart-total").text(data.total)
+              }else{
+                window.location.href = currentUrl
+              }
             },
             error:function(errorData){
               console.log('error');

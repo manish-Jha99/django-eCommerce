@@ -1,15 +1,39 @@
 {% extends 'base.html' %}
 {% block content%}
+<body>
+		<section class="login_box_area section-margin-small">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="login_box_img">
+						<div class="hover">
+							<h4>New to our website?</h4>
+							<p>There are advances being made in science and technology everyday, and a good example of this is the</p>
+							<a class="button button-account" href="/register/">Create an Account</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="login_form_inner">
+              <form class="form-signin" method="POST">
+                <div class="text-center">
+									<h3>Log in to enter</h3>
+                      <div class="container">
+											  <form method="POST">{% csrf_token %}
+                            {{ form.as_p }}
+														<button type="submit" value="submit" class="button button-login w-100">Submit</button>
+                        </form>
+                      </div>
+                </div>
+              </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-<form class="form-signin" method="POST">
-  <div class="text-center">
-      <h1>Login</h1><br>
-        <div class="container">
-          <form method="POST">{% csrf_token %}
-              {{ form.as_p }}
-              <button type="submit" class="btn btn-lg btn-default">Submit</button>
-          </form>
-        </div>
-  </div>
-</form>
-{% endblock %}
+
+
+  {% endblock %}
+
+</body>

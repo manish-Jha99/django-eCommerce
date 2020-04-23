@@ -1,19 +1,44 @@
 {% extends 'base.html' %}
-
 {% block content%}
- <div class="text-center">
-    <h1>Contact Us</h1>
-  </div>
-     <div class="container">
-       <div class="row">
-          <div class="col">
-              <div class="col-sm-6 col-12 mx-auto">
-                <form class="contact-form" method="post" action="{% url 'contact' %}">{% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" name="send-button" class="btn btn-default" autofocus="True">Send</button>
-                </form>
-              </div>
-            </div>
-        </div>
-      </div>
+
+<body>
+
+<section class="section-margin">
+	<div class="container">
+			<div class="row">
+	        <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+	          <div class="media contact-info">
+	            <span class="contact-info__icon"><i class="ti-home"></i></span>
+	            <div class="media-body">
+	              <h3>India</h3>
+	              <p>Bangalore</p>
+	            </div>
+	          </div>
+	          <div class="media contact-info">
+	            <span class="contact-info__icon"><i class="ti-headphone"></i></span>
+	            <div class="media-body">
+	              <h3><a href="tel:454545654">00 (440) 9865 562</a></h3>
+	              <p>Mon to Fri 9am to 6pm</p>
+	            </div>
+	          </div>
+	          <div class="media contact-info">
+	            <span class="contact-info__icon"><i class="ti-email"></i></span>
+	            <div class="media-body">
+	              <h3><a href="mailto:support@colorlib.com">mjshop@online.com</a></h3>
+	              <p>Send us your query anytime!</p>
+	            </div>
+	          </div>
+	        </div>
+		        <div class="col-md-8 col-lg-9">
+							<form class="contact-form" method="post" action="{% url 'contact' %}">{% csrf_token %}
+									{{ form.as_p }}
+									<div class="form-group text-center text-md-right mt-3">
+              			<button type="submit" name="send-button" class="button button--active button-contactForm" autofocus="True">Send Message</button>
+									</div>
+							</form>
+		        </div>
+				</div>
+			</div>
+		</section>
 {% endblock %}
+</body>

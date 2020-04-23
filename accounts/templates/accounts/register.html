@@ -1,20 +1,32 @@
 
 {% extends 'base.html' %}
-
 {% block content%}
-<div class="text-center">
-    <h1>Register</h1>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col">
-       <div class="col-sm-6 col-12 mx-auto">
-          <form method="POST">{% csrf_token %}
+<body>
+
+  <section class="login_box_area section-margin-small">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="login_box_img">
+						<div class="hover">
+							<h4>Already have an account?</h4>
+							<p>There are advances being made in science and technology everyday, and a good example of this is the</p>
+							<a class="button button-account" href="/login">Login Now</a>
+						</div>
+					</div>
+				</div>
+        <div class="col-lg-6 ">
+          <div class="login_form_inner register_form_inner">
+            <h3>Create an account</h3>
+            <form method="POST">{% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-default">Submit</button>
+            <div class="col-md-12 form-group">
+              <button type="submit" value="submit" class="button button-register w-100">Register</button>
+            </div>
           </form>
         </div>
     </div>
   </div>
 </div>
 {% endblock %}
+</body>

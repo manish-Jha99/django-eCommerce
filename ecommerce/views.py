@@ -18,7 +18,7 @@ def contact_page(request):
     if contact_form.is_valid():
         print(contact_form.cleaned_data)
         if request.is_ajax():
-            return JsonResponse({"message":"Thank You!"})
+            return JsonResponse({"message":"Thank You For Your Submission!"})
 
     if contact_form.errors:
         errors = contact_form.errors.as_json()
