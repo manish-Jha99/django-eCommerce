@@ -1,5 +1,6 @@
 {% load static %}
 {% url 'products:list' as product_list_url %}
+{% url 'contact' as contact_url %}
 
 <section class="subscribe-position section-margin-small">
   <div class="container">
@@ -36,11 +37,9 @@
           <div class="single-footer-widget tp_widgets">
             <h4 class="footer_title">Quick Links</h4>
             <ul class="list">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Shop</a></li>
-              <li><a href="#">Product</a></li>
-              <li><a href="#">Brand</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="{{ product_list_url }}">Home</a></li>
+              <li><a href="{{ product_list_url }}">Shop</a></li>
+              <li><a href="{{ contact_url }}">Contact</a></li>
             </ul>
           </div>
         </div>

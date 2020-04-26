@@ -6,8 +6,6 @@
         {% endif %}
   </div>
 
-  <div class="card-body">
         <h4 class="card-product__title"><a href="{{ instance.get_absolute_urls }}">{{ instance.title }}</a></h4>
       <!--  <a href="{{ instance.get_absolute_urls }}" class="btn btn-primary">View</a> -->
         {% include 'products/snippets/update-cart.html' with product=instance cart=cart %}
-  </div>
