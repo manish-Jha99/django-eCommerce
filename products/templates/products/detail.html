@@ -1,27 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-<div class="card" style = "width:40rem;">
-<div class='row'>
-  <div class='col-12 col-md-6'>
-    <div class="card-body">
-      <h4 class="card-title ">{{ object.title }}</h4><hr>
-      <h5 > {{ object.description }} </h5>
-      <h5>{{ object.timestamp  | timesince}} ago</h5>
-      <h5>{{ object.price }}</h5>
-      {% if object.image %}
-    <!--  <img src="{{ object.image.url }}" class="img-fluid"> -->
-        <img class="card-img-top img-fluid" src="{{ object.image.url }}">
-      {% endif %}
-     </div>
-   </div>
-    </div>
-    <div class='col-12 col-md-6'>
-      {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
-    </div>
-  </div>
- </div>
+
+<div class="product_image_area  mt-3">
+		<div class="container">
+			<div class="row s_product_inner">
+				<div class="col-lg-6">
+					<div class="owl-carousel owl-theme s_Product_carousel owl-loaded owl-drag">
+					<div class="owl-stage-outer">
+            <div class="owl-stage" style="transform: translate3d(-1380px, 0px, 0px); transition: all 0s ease 0s; width: 3450px;">
+              <div class="owl-item cloned" style="width: 690px;">
+                  <div class="single-prd-item">
+                    {% if object.image %}
+                      <img class="img-fluid" src="{{ object.image.url }}">
+                    {% endif %}
+    						  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+				</div>
+				<div class="col-lg-5 offset-lg-1">
+					<div class="s_product_text">
+						<h3>{{ object.title }}</h3>
+						<h2>{{ object.price }}</h2>
+						<ul class="list">
+							<li><span>Category</span>&nbsp&nbsp:  Household</li>
+							<li><span>Availibility</span>&nbsp&nbsp: In Stock</li>
+						</ul>
+						<p>{{ object.description }}</p>
+            <div class='col-12 col-md-6'>
+              {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
 
 
 {% endblock %}

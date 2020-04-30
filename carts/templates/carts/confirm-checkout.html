@@ -1,0 +1,150 @@
+<!--
+<div class="container">
+  <h1 class="text-center"> Finalize Ckeckout</h1>
+  <h4>Cart Items : {% for product in object.cart.products.all %}{{ product }}{% if not forloop.last%}, {%endif%}{%endfor%}</h4>
+  <p>Shipping Address : {{ object.shipping_address.get_address }}</p>
+  <p>Billing Address : {{ object.billing_address.get_address }}</p>
+  <p>Cart Total : {{ object.cart.total }}</p>
+  <p>Shipping Charges : {{ object.shipping_total }}</p>
+  <p>Order Total : {{ object.total }}</p>
+  <form class="form" action="" method="post">{% csrf_token %}
+    <button type="submit" class='btn btn-success btn-lg' style='border-radius:15px;'>Order</button>
+  </form>
+</div> -->
+
+
+
+<section class="order_details section-margin--small">
+    <div class="container">
+      <h1 class="text-center"> Finalize Ckeckout </h1>
+      <div class="order_details_table">
+        <h2>Cart Details</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for product in object.cart.products.all %}
+              <tr>
+                <td><h5>{{ forloop.counter }}</h5></td>
+                <td><h6>{{ product.title }}</h6></td>
+                <td><h6>{{ product.price }}</h6></td>
+              </tr>
+              {% endfor %}
+              <tr>
+                 <td></td>
+                  <td><h4>Subtotal</h4></td>
+                  <td><h4>{{ object.cart.subtotal }}</h4></td>
+              </tr>
+              <tr>
+                  <td></td>
+                  <td ><h4>Shipping Charges</h4></td>
+                  <td><h4>{{ object.shipping_total }}</h4></td>
+              </tr>
+              <tr>
+                  <td></td>
+                  <td ><h4>Total</h4></td>
+                  <td><h4>{{ object.cart.total }}</h4></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row mb-5 mt-3">
+        <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+          <div class="confirmation-card">
+            <h3 class="billing-title">Billing Address</h3>
+            <table class="order-rable">
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td>{{ object.billing_address.get_address }}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+          <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+              <h3 class="billing-title"></h3>
+              <table style="display:none;">
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody></table>
+            </div>
+        <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+          <div class="confirmation-card">
+            <h3 class="billing-title">Shipping Address</h3>
+            <table class="order-rable">
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td>{{ object.shipping_address.get_address }}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center">
+      <form class="form" action="" method="post">{% csrf_token %}
+        <button type="submit" class='btn btn-success btn-lg' style='border-radius:15px;'>Order</button>
+      </form>
+  </div>
+  </section>

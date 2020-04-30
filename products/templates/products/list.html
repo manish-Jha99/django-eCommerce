@@ -27,35 +27,35 @@
          <div class="owl-carousel owl-theme hero-carousel">
            <div class="hero-carousel__slide">
              <img src="{% static 'img/hero-slide1.png'%}" alt="" class="img-fluid">
-             <a href="#" class="hero-carousel__slideOverlay">
+             <a class="hero-carousel__slideOverlay">
                <h3>Shoe</h3>
                <p>Comming Soon</p>
              </a>
            </div>
            <div class="hero-carousel__slide">
              <img src="{% static 'img/hero-slide2.png'%}" alt="" class="img-fluid">
-             <a href="#" class="hero-carousel__slideOverlay">
+             <a class="hero-carousel__slideOverlay">
                <h3>Wireless Headphone</h3>
                <p>Comming Soon</p>
              </a>
            </div>
            <div class="hero-carousel__slide">
              <img src="{% static 'img/hero-slide3.png' %}" alt="" class="img-fluid">
-             <a href="#" class="hero-carousel__slideOverlay">
+             <a class="hero-carousel__slideOverlay">
                <h3>Speaker</h3>
                <p>Comming Soon</p>
              </a>
            </div>
            <div class="hero-carousel__slide">
              <img src="{% static 'img/c2.jpg' %}" alt="" class="img-fluid">
-             <a href="#" class="hero-carousel__slideOverlay">
+             <a class="hero-carousel__slideOverlay">
                <h3>Waterproof Shoe</h3>
                <p>Comming Soon</p>
              </a>
            </div>
            <div class="hero-carousel__slide">
              <img src="{% static 'img/c3.jpg' %}" alt="" class="img-fluid">
-             <a href="#" class="hero-carousel__slideOverlay">
+             <a  class="hero-carousel__slideOverlay">
                <h3>Styless</h3>
                <p>Comming Soon</p>
              </a>
@@ -84,7 +84,7 @@
                  </div>
                  <div class="card-body">
                    <p>Accessories</p>
-                   <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
+                   <h4 class="card-product__title"><a >Quartz Belt Watch</a></h4>
                    <p class="card-product__price">$150.00</p>
                  </div>
                </div>
@@ -101,7 +101,7 @@
                  </div>
                  <div class="card-body">
                    <p>Beauty</p>
-                   <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
+                   <h4 class="card-product__title"><a>Women Freshwash</a></h4>
                    <p class="card-product__price">$150.00</p>
                  </div>
                </div>
@@ -118,7 +118,7 @@
                  </div>
                  <div class="card-body">
                    <p>Decor</p>
-                   <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+                   <h4 class="card-product__title"><a >Room Flash Light</a></h4>
                    <p class="card-product__price">$150.00</p>
                  </div>
                </div>
@@ -135,7 +135,7 @@
                  </div>
                  <div class="card-body">
                    <p>Decor</p>
-                   <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+                   <h4 class="card-product__title"><a >Room Flash Light</a></h4>
                    <p class="card-product__price">$150.00</p>
                  </div>
                </div>
@@ -152,7 +152,7 @@
                  </div>
                  <div class="card-body">
                    <p>Accessories</p>
-                   <h4 class="card-product__title"><a href="single-product.html">Man Office Bag</a></h4>
+                   <h4 class="card-product__title"><a >Man Office Bag</a></h4>
                    <p class="card-product__price">$150.00</p>
                  </div>
                </div>
@@ -169,7 +169,7 @@
                  </div>
                  <div class="card-body">
                    <p>Kids Toy</p>
-                   <h4 class="card-product__title"><a href="single-product.html">Charging Car</a></h4>
+                   <h4 class="card-product__title"><a >Charging Car</a></h4>
                    <p class="card-product__price">$150.00</p>
                  </div>
                </div>
@@ -186,7 +186,7 @@
                  </div>
                  <div class="card-body">
                    <p>Accessories</p>
-                   <h4 class="card-product__title"><a href="single-product.html">Blutooth Speaker</a></h4>
+                   <h4 class="card-product__title"><a >Blutooth Speaker</a></h4>
                    <p class="card-product__price">$150.00</p>
                  </div>
                </div>
@@ -194,7 +194,7 @@
              <div class="col-md-6 col-lg-4 col-xl-3">
                <div class="card text-center card-product">
                  <div class="card-product__img">
-                   <img class="card-img" src="{% static 'img/product8.png' %]" alt="">
+                   <img class="card-img" src="{% static 'img/product6.png' %]" alt="">
                    <ul class="card-product__imgOverlay">
                      <li><button><i class="ti-search"></i></button></li>
                      <li><button><i class="ti-shopping-cart"></i></button></li>
@@ -203,7 +203,7 @@
                  </div>
                  <div class="card-body">
                    <p>Kids Toy</p>
-                   <h4 class="card-product__title"><a href="#">Charging Car</a></h4>
+                   <h4 class="card-product__title"><a >Charging Car</a></h4>
                    <p class="card-product__price">$150.00</p>
                  </div>
                </div>
@@ -238,166 +238,21 @@
                  <p>Popular Item in the market</p>
                  <h2>Best <span class="section-intro__style">Sellers</span></h2>
                </div>
-               <div class="owl-carousel owl-theme " id="bestSellerCarousel">
-                   {% for obj in object_list %}
-                   <div class="card text-center card-product">
-                     <div class="card-body">
-                      {% include 'products/snippets/card.html' with instance=obj %}
-                       <p>Accessories</p>
-                     </div>
-                     </div>
-                     {% endfor %}
-               </div>
-           </div>
 
-
-
-
-
-
-<!--
-           <div class="products">
-           		<div class="section_container">
-           			<div class="container">
-           				<div class="row">
-           					<div class="col">
-           						<div class="products_container grid" style="position: relative; height: 2872.38px;">
-
-           							<div class="product grid-item hot" style="position: absolute; left: 0%; top: 0px;">
-           								<div class="product_inner">
-           									<div class="product_image">
-           										<img src="images/product_1.jpg" alt="">
-           										<div class="product_tag">hot</div>
-           									</div>
-           									<div class="product_content text-center">
-           										<div class="product_title"><a href="product.html">long red shirt</a></div>
-           										<div class="product_price">$39.90</div>
-           										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
-           									</div>
-           								</div>
-           							</div>
-
-           							<div class="product grid-item" style="position: absolute; left: 50%; top: 0px;">
-           								<div class="product_inner">
-           									<div class="product_image"><img src="images/product_2.jpg" alt=""></div>
-           									<div class="product_content text-center">
-           										<div class="product_title"><a href="product.html">hype grey shirt</a></div>
-           										<div class="product_price">$19.50</div>
-           										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
-           									</div>
-           								</div>
-           							</div>
-
-           							<div class="product grid-item sale" style="position: absolute; left: 0%; top: 718.094px;">
-           								<div class="product_inner">
-           									<div class="product_image">
-           										<img src="images/product_3.jpg" alt="">
-           										<div class="product_tag">sale</div>
-           									</div>
-           									<div class="product_content text-center">
-           										<div class="product_title"><a href="product.html">long sleeve jacket</a></div>
-           										<div class="product_price">$32.20<span>RRP 64.40</span></div>
-           										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
-           									</div>
-           								</div>
-           							</div>
-
-           							<div class="product grid-item" style="position: absolute; left: 50%; top: 718.094px;">
-           								<div class="product_inner">
-           									<div class="product_image">
-           										<img src="images/product_4.jpg" alt="">
-           									</div>
-           									<div class="product_content text-center">
-           										<div class="product_title"><a href="product.html">denim men shirt</a></div>
-           										<div class="product_price">$59.90</div>
-           										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
-           									</div>
-           								</div>
-           							</div>
-
-
-           							<div class="product grid-item" style="position: absolute; left: 0%; top: 1436.19px;">
-           								<div class="product_inner">
-           									<div class="product_image">
-           										<img src="images/product_5.jpg" alt="">
-           									</div>
-           									<div class="product_content text-center">
-           										<div class="product_title"><a href="product.html">long red shirt</a></div>
-           										<div class="product_price">$79.90</div>
-           										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
-           									</div>
-           								</div>
-           							</div>
-
-
-           							<div class="product grid-item new" style="position: absolute; left: 50%; top: 1436.19px;">
-           								<div class="product_inner">
-           									<div class="product_image">
-           										<img src="images/product_6.jpg" alt="">
-           										<div class="product_tag">new</div>
-           									</div>
-           									<div class="product_content text-center">
-           										<div class="product_title"><a href="product.html">hype grey shirt</a></div>
-           										<div class="product_price">$59.90</div>
-           										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
-           									</div>
-           								</div>
-           							</div>
-
-
-           							<div class="product grid-item" style="position: absolute; left: 0%; top: 2154.28px;">
-           								<div class="product_inner">
-           									<div class="product_image">
-           										<img src="images/product_7.jpg" alt="">
-           									</div>
-           									<div class="product_content text-center">
-           										<div class="product_title"><a href="product.html">long sleeve jacket</a></div>
-           										<div class="product_price">$15.90</div>
-           										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
-           									</div>
-           								</div>
-           							</div>
-
-    
-           							<div class="product grid-item sale" style="position: absolute; left: 50%; top: 2154.28px;">
-           								<div class="product_inner">
-           									<div class="product_image">
-           										<img src="images/product_8.jpg" alt="">
-           										<div class="product_tag">sale</div>
-           									</div>
-           									<div class="product_content text-center">
-           										<div class="product_title"><a href="product.html">denim men shirt</a></div>
-           										<div class="product_price">$43.99<span>RRP 64.40</span></div>
-           										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
-           									</div>
-           								</div>
-           							</div>
-
-           						</div>
-           					</div>
-           				</div>
-           			</div>
-           		</div>
-           	</div>
-
-           -->
-
-
-
-
-
-
-
-
-
-
-
+                      <div class="owl-carousel owl-theme" id="bestSellerCarousel">
+                        {% for obj in object_list %}
+                           <div class="card text-center card-product">
+                               <div class="card-body">
+                                {% include 'products/snippets/card.html' with instance=obj %}
+                                 <p>Accessories</p>
+                               </div>
+                           </div>
+                         {% endfor %}
+                       </div>
+                </div>
 
 
        </section>
-       <!-- ================ Best Selling item  carousel end ================= -->
-
-       <!-- ================ Subscribe section start ================= -->
-      </main>
+        </main>
 
 {% endblock %}

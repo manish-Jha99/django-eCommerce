@@ -1,11 +1,11 @@
 
 
-  <div class="card-product__img">
+  <div class="card-product__img" >
         {% if instance.image %}
-        <img class="img-fluid" src="{{ instance.image.url }}">
+           <a href="{{ instance.get_absolute_urls }}">  <img class="img-fluid" src="{{ instance.image.url }}" style="width:290px; height:290px;"></a>
         {% endif %}
   </div>
 
-        <h4 class="card-product__title"><a href="{{ instance.get_absolute_urls }}">{{ instance.title }}</a></h4>
-      <!--  <a href="{{ instance.get_absolute_urls }}" class="btn btn-primary">View</a> -->
-        {% include 'products/snippets/update-cart.html' with product=instance cart=cart %}
+  <h4 class="card-product__title"><a href="{{ instance.get_absolute_urls }}">{{ instance.title }}</a></h4>
+  <!--  <a href="{{ instance.get_absolute_urls }}" class="btn btn-primary">View</a> -->
+  {% include 'products/snippets/update-cart.html' with product=instance cart=cart %}
