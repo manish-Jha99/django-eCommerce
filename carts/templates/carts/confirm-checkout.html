@@ -16,42 +16,48 @@
 
 <section class="order_details section-margin--small">
     <div class="container">
-      <h1 class="text-center"> Finalize Ckeckout </h1>
       <div class="order_details_table">
+        <h1 class="text-center mr-auto"> Finalize Ckeckout </h1><hr/>
         <h2>Cart Details</h2>
         <div class="table-responsive">
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Product</th>
-                <th scope="col">Price</th>
+                <th scope="col"><h2>#</h2></th>
+                <th scope="col"><div class="ml-5"><h2>Product</h2></div></th>
+                <th scope="col"><h2>Price</h2></th>
               </tr>
+              <hr/>
             </thead>
             <tbody>
               {% for product in object.cart.products.all %}
               <tr>
                 <td><h5>{{ forloop.counter }}</h5></td>
-                <td><h6>{{ product.title }}</h6></td>
+                <td>
+                      <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+											<div><div class="product_image mr-3"><img src="{{ product.image.url }}" style="width:115px;height:115px;"></div></div>
+											<div class="product_name ml-4"><a href="{{ product.get_absolute_urls }}">{{product.title}}</a></div>
+									   	</div>
+                </td>
                 <td><h6>{{ product.price }}</h6></td>
               </tr>
               {% endfor %}
-              <tr>
+
+                <tr>
                  <td></td>
                   <td><h4>Subtotal</h4></td>
-                  <td><h4>{{ object.cart.subtotal }}</h4></td>
-              </tr>
-              <tr>
+                  <td><h6>{{ object.cart.subtotal }}</h6></td>
+                </tr>
+                <tr>
                   <td></td>
                   <td ><h4>Shipping Charges</h4></td>
-                  <td><h4>{{ object.shipping_total }}</h4></td>
-              </tr>
-              <tr>
+                  <td><h6>{{ object.shipping_total }}</h6></td>
+                </tr>
+                <tr>
                   <td></td>
                   <td ><h4>Total</h4></td>
-                  <td><h4>{{ object.cart.total }}</h4></td>
+                  <td><h6>{{ object.cart.total }}</h6></td>
               </tr>
-
             </tbody>
           </table>
         </div>

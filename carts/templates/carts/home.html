@@ -11,9 +11,9 @@
                   <table class="table cart-table">
                       <thead >
                           <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Product</th>
-                              <th scope="col">Price</th>
+                            <th scope="col"><h3>#</h3></th>
+                            <th scope="col"><div class="mr-5"><h3>Product</h3></div></th>
+                            <th scope="col"><h3>Price</h3></th>
                           </tr>
                       </thead>
                       <tbody class='cart-body'>
@@ -23,29 +23,27 @@
                                 <h5> {{ forloop.counter }}</h5>
                             </td>
                               <td>
-                                  <div class="media">
-                                      <div class="media-body">
-                                        <a href="{{ product.get_absolute_urls }}">{{ product.title }}</a>
-                                      </div>
-                                  </div>
-                                  {% include 'carts/snippets/remove-product.html' with product_id=product.id  %}
+                                  <div class="text-center">
+                                      <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                											<div><div class="product_image ml-5"><img src="{{ product.image.url }}" style="width:85px;height:85px;"></div></div>
+                											<div class="product_name ml-4 mr-4"><a href="{{ product.get_absolute_urls }}">{{product.title}}</a></div>
+                                      {% include 'carts/snippets/remove-product.html' with product_id=product.id  %}  	</div></div>
                               </td>
                               <td>
                                   <h5>{{ product.price }}</h5>
                               </td>
                           </tr>
                           {% endfor %}
-
-
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td><b>Subtotal     :  </b><span class="cart-subtotal">{{ cart.subtotal }}</span></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td><b>Total     :  </b><span class="cart-total">{{ cart.total }}</span></td>
-                                </tr>
-
+                          <tr>
+                           <td></td>
+                            <td><h4>Subtotal</h4></td>
+                            <td><h6>{{ cart.subtotal }}</h6></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td ><h4>Total</h4></td>
+                            <td><h6>{{ cart.total }}</h6></td>
+                            </tr>
                           <tr class="out_button_area">
                               <td class="d-none-l">
 
